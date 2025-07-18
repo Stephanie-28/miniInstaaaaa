@@ -1,0 +1,14 @@
+body {
+    background: rgb(184, 28, 28);
+    font-size: 20px;
+}
+
+a {
+    box-shadow: 7px 7px 2px 1px snow;
+    text-decoration: none;
+    color: snow;
+}
+
+img {
+    margin-bottom: 20px;
+}
