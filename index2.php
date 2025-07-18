@@ -23,7 +23,7 @@
         <div>
             <!-- <img src="photos/chateau.jpg" alt="chateau"> -->
             <?php 
-            $photos_dir = opendir("photos");
+                $photos_dir = opendir("photos");
                 // do {
                     $file_name = readdir($photos_dir);
                     echo "<img src='photos/chateau.jpg'>";

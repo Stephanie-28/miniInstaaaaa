@@ -23,7 +23,12 @@
                 <button>envoyer</button>
             </form>
         </div>
-        <img src="/photos/chateau 2.jpg" alt="chateau">
+        <?php
+            $photos_dir = opendir("photos");
+        // <img src="/photos/chateau 2.jpg" alt="chateau">
+            $file_name = readdir($photos_dir);
+            echo "<img src='photos/chateau 2.jpg'>";
+        ?>
     </section>
 </body>
 </html>
