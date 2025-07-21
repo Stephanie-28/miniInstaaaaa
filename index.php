@@ -27,7 +27,7 @@
             $photos_dir = opendir("photos");
         // <img src="/photos/chateau 2.jpg" alt="chateau">
             $file_name = readdir($photos_dir);
-            echo "<img src='photos/chateau 2.jpg'>";
+            echo "<img src='photos/$file_name'>";
         ?>
     </section>
 </body>

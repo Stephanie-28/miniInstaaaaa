@@ -24,11 +24,12 @@
             <!-- <img src="photos/chateau.jpg" alt="chateau"> -->
             <?php 
                 $photos_dir = opendir("photos");
-                // do {
+                do {
                     $file_name = readdir($photos_dir);
-                    echo "<img src='photos/chateau.jpg'>";
-                // } 
-                // while ($file_name);
+                    
+                    echo "<img src='photos/$file_name'>";
+                } 
+                while ($file_name);
             ?>
         </div>
             <a href="index.php">retour d'accueille</a>
