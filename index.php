@@ -1,5 +1,18 @@
 <?php 
+            $photos_dir = opendir("photos");
+            $file_name = readdir($photos_dir);
+            // echo "<img src='photos/$file_name'>";
 
+$file_names =[];
+    $photos_dir = opendir("photos");
+    do {
+        $file_name = readdir($photos_dir);
+        if ($file_name && $file_name != "." && $file_name != ".." && $file_name != "/"){
+            array_push($file_names,$file_name);
+            sort($file_names);
+        }
+    } 
+    while ($file_name);
 ?>
 
 <!DOCTYPE html>
@@ -15,20 +28,19 @@
     <section class="the one">
         <h1>MINI INSTA</h1>
         <p>Ajouté une photo !</p>
+        <p>venez loué nos aibnb médiéval !!!</p>
         <div>
             <form action="/index2.php" method="post" enctype="multipart/form-data">
                 <input type="text" name="author" placeholder="Auteur"><br/>
                 <input type="file" name="fichier" placeholder="Parcourir ...">
-                <!-- <label for="name">Fichier</label> -->
                 <button>envoyer</button>
             </form>
         </div>
-        <?php
-            $photos_dir = opendir("photos");
-        // <img src="/photos/chateau 2.jpg" alt="chateau">
-            $file_name = readdir($photos_dir);
-            echo "<img src='photos/$file_name'>";
-        ?>
+        <div class="fichiers">
+            <?php foreach ($file_names as $file_name): ?>
+                <img src="photos/<?= $file_name; ?>">
+            <?php endforeach; ?>
+        </div>
     </section>
 </body>
 </html>
